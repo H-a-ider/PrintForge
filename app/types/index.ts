@@ -42,10 +42,9 @@ export type ModelsPageProps = {
 }
 
 export type ModelDetailPageProps = {
-    params: Promise<{
-        id: string
-    }>
-}
+  params: { id: string };
+};
+
 
 // Components Types
 export type ModelCardProps = {

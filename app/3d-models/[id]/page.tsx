@@ -5,7 +5,7 @@ import { getModelById } from "@/app/lib/models"
 
 
 export default async function ModelDetailPage({ params }: ModelDetailPageProps) {
-  const { id } = await params
+  const { id } = params;
   const model = await getModelById(id)
 
   return (
@@ -37,9 +37,7 @@ export default async function ModelDetailPage({ params }: ModelDetailPageProps) 
 
           <Pill
             className="mb-6 w-fit"
-            role="status"
-            aria-label="Category"
-          >
+            >
             {model.category}
           </Pill>
 
