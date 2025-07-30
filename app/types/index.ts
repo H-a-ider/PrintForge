@@ -24,12 +24,13 @@ export type GetModelsParams = {
     category?: string
 }
 
-// Page Types
+/// ✅ Correct
 export type CategoryPageProps = {
-    params: Promise<{
-        categoryName: string
-    }>
+  params: {
+    categoryName: string
+  }
 }
+
 
 export type RootLayoutProps = Readonly<{
     children: React.ReactNode;
