@@ -24,7 +24,7 @@ export type GetModelsParams = {
     category?: string
 }
 
-/// ✅ Correct
+
 export type CategoryPageProps = {
   params: {
     categoryName: string
