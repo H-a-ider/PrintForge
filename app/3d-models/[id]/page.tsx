@@ -1,12 +1,16 @@
+// app/3d-models/[id]/page.tsx
+
 import { FaRegHeart } from "react-icons/fa6"
 import Pill from "@/app/components/Pill"
-import type { ModelDetailPageProps } from "@/app/types"
 import { getModelById } from "@/app/lib/models"
+import type { PageProps } from "@/app/types"  
+import type { Model } from "@/app/types"
 
+type ModelDetailPageProps = PageProps<{ id: string }> 
 
 export default async function ModelDetailPage({ params }: ModelDetailPageProps) {
-  const { id } = params;
-  const model = await getModelById(id)
+  const { id } = params
+  const model: Model = await getModelById(id)
 
   return (
     <div className="container max-w-6xl px-4 py-8 mx-auto">
@@ -31,13 +35,13 @@ export default async function ModelDetailPage({ params }: ModelDetailPageProps) 
               className="w-5 h-5 mr-2"
               aria-hidden="true"
             />
-            <span className="font-light" aria-label={`${model.likes} likes`}>{model.likes}</span>
+            <span className="font-light" aria-label={`${model.likes} likes`}>
+              {model.likes}
+            </span>
           </div>
           <h1 className="mb-6 text-4xl font-bold">{model.name}</h1>
 
-          <Pill
-            className="mb-6 w-fit"
-            >
+          <Pill className="mb-6 w-fit">
             {model.category}
           </Pill>
 

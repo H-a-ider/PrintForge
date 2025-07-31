@@ -46,6 +46,10 @@ export type ModelDetailPageProps = {
   params: { id: string };
 };
 
+export type PageProps<T = {}> = {
+  params: T
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
 
 // Components Types
 export type ModelCardProps = {
